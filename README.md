@@ -31,3 +31,4 @@ Each email should be tailored and personalized to the specific venue/pub that th
   * Venue-specific details.
   * Exclusive discount offer for new members. Redemption code is Venue voucher prefix and member ID (e.g. “GDNEW789-1001”)
 Call-to-action to visit the venue.
+# AMPscript-Hub
