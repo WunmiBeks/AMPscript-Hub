@@ -1,0 +1,6 @@
+MemberID,First Name,Last Name,Email,SignedUpDate,VenueID
+1001,john,DOE,john.doe@example.com,2024-06-15,101
+1002,sArAh,smiTh,jane.smith@example.com,2024-06-15,102
+1003,,,bob.brown@example.com,2024-06-15,103
+1004,Ê alice,JOHNSON,alice.johnson@example.com,2024-06-15,104
+1005,Charlie,Williams,charlie.williams@example.com,2024-06-15,105
