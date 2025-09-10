@@ -1,0 +1,54 @@
+%%[
+
+/*Retrieve fields from Sending DE */
+SET @custID = [CustomerID]
+SET @firstName = [FirstName]
+SET @lastPlanID = [LastPlanID]
+
+/* First name and subject line logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstNameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+   SET @subjectLine = CONCAT(@finalName, ",", " We Want You Back! 50% Off Just for You! 🚀")
+
+ELSE 
+   SET @finalName = "there"
+   SET @subjectLine = "We Want You Back! 50% Off Just for You! 🚀"
+
+ENDIF
+
+/* offerA and offerB planIDs for last Plan ID */
+SET @offerA_ID = Lookup("Plan_Matrix", "OfferA", "PlanID", @lastPlanID)
+SET @offerB_ID = Lookup("Plan_Matrix", "OfferB", "PlanID", @lastPlanID)
+
+/* OfferA and OfferB plan name and details */
+SET @offerAPlanName = Lookup("Plan_Matrix", "PlanName", "PlanID", @offerA_ID)
+SET @offerBPlanName = Lookup("Plan_Matrix", "PlanName", "PlanID", @offerB_ID)
+SET @offerAGB = Lookup("Plan_Matrix", "GB", "PlanID", @offerA_ID)
+SET @offerBGB = Lookup("Plan_Matrix", "GB", "PlanID", @offerB_ID)
+
+    /* discounted price for offerA and OfferB */
+SET @currentOfferAPrice = Lookup("Plan_Matrix", "PricePerMonth", "PlanID", @offerA_ID)
+SET @currentOfferBPrice = Lookup("Plan_Matrix", "PricePerMonth", "PlanID", @offerB_ID)
+SET @currentOfferAPriceFormatted = FormatNumber(@currentOfferAPrice, "C")
+SET @currentOfferBPriceFormatted = FormatNumber(@currentOfferBPrice, "C")
+
+SET @discount = "0.5"
+SET @discountOfferAPrice = Multiply(@currentOfferAPrice, @discount)
+SET @discountOfferBPrice = Multiply(@currentOfferBPrice, @discount)
+
+SET @discountOfferAPriceFormatted = Format(@discountOfferAPrice , "C")
+SET @discountOfferBPriceFormatted = Format(@discountOfferBPrice , "C")
+
+SET @newMonthlyPrice_A = CONCAT(@discountOfferAPriceFormatted, " for the first 3 renewals (then ", @currentOfferAPriceFormatted, " for remaining renewals)")
+SET @newMonthlyPrice_B = @discountOfferBPriceFormatted
+
+
+/* Set reactivation link for option 1 and 2*/
+SET @reactivationLink1 = CONCAT("telcotech.com/reactivate?custID=", @custID, "&offerID=", @offerA_ID)
+SET @reactivationLink2 = CONCAT("telcotech.com/reactivate?custID=", @custID, "&offerID=", @offerB_ID)
+
+/* Set unsubscibe link */
+SET @unsubscribeLink = "www.unsubscribe.com"
+
+]%%

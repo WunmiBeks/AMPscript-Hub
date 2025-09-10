@@ -1,0 +1,6 @@
+VenueID,VenueName,VenueManager,LogoURL,Address,ContactInfo,FacebookLink,VoucherPrefix
+101,The Red Lion,James Peterson,http://image.theblackforce.ca/lib/fe3211737164047b711675/m/1/5d1b45df-ecea-449d-b710-966c5d3bc551.png,"123 Main St, City A",123-456-7890,facebook.com/reddlion,RLNEW102
+102,Green Dragon,Robert Mahone,http://image.theblackforce.ca/lib/fe3211737164047b711675/m/1/28e58576-875b-48f0-9af2-f0d8ef28a415.png,"456 Elm St, City B",234-567-8901,facebook.com/grendragon,GDNEW789
+103,The Blue Boar,Jessica Norris,http://image.theblackforce.ca/lib/fe3211737164047b711675/m/1/bdafd0e8-73ae-48b6-a43a-bafcf5cdac11.png,"789 Oak St, City C",345-678-9012,facebook.com/blueboar,BBNEW764
+104,Golden Goose,Lorene Thomas,http://image.theblackforce.ca/lib/fe3211737164047b711675/m/1/a7bc0afe-7834-42f1-a06a-7c39bd9d4d0e.png,"321 Maple St, City D",456-789-0123,facebook.com/goldengander,GGNEW672
+105,The Silver Fox,Aaron Hill,http://image.theblackforce.ca/lib/fe3211737164047b711675/m/1/82ce056c-b24d-488b-a37a-28104a7d9133.png,"654 Pine St, City E",567-890-1234,facebook.com/silverfox,SFNEW998

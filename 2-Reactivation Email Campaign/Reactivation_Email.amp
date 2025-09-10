@@ -1,0 +1,24 @@
+Subject Line: %%=v(@subjectLine)=%%
+
+Hi %%=v(@finalName)=%%,
+We miss you! It's been a while since you've been with us, and we have a special offer just for you. We are offering a <strong>50% discount</strong> on your first 3 renewals if you reactivate your plan with us.
+Based on your last plan, here are two exciting options for you:
+
+Option 1:
+Plan Name: %%=v(@offerAPlanName)=%%
+Data: %%=v(@offerAGB)=%%
+Price per Month:%%=v(@newMonthlyPrice_A)=%%
+<a href="%%=RedirectTo(@reactivationLink1)=%%">Reactivate Offer 1</a>
+
+Option 2:
+Plan Name: %%=v(@offerBPlanName)=%%
+Data: %%=v(@offerAGB)=%%
+Price per Month: %%=v(@discountOfferBPriceFormatted)=%%
+<a href="%%=RedirectTo(@reactivationLink2)=%%">Reactivate Offer 2</a>
+
+Don't miss out on this great opportunity to come back to TelcoTech and enjoy premium service at an unbeatable price. Click the link below to reactivate your plan and start saving!
+
+Best regards,
+The TelcoTech Team
+
+Click <a href="%%=RedirectTo(@unsubscribeLink)=%%">unsubscribe</a> to opt out of all marketing communications.

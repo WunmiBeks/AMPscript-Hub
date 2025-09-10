@@ -1,0 +1,16 @@
+PlanID,PlanName,GB,PricePerMonth,OfferA,OfferB
+101,Basic Plan,5GB,20,201,202
+102,Standard Plan,10GB,30,203,204
+103,Premium Plan,20GB,50,205,206
+104,Unlimited Plan,50GB,70,207,208
+105,Family Plan,100GB,90,209,210
+201,Basic Plus Plan,5GB,15,101,202
+202,Basic Extra Plan,10GB,25,102,201
+203,Standard Plus Plan,10GB,20,102,204
+204,Standard Extra Plan,15GB,35,103,203
+205,Premium Plus Plan,20GB,40,103,206
+206,Premium Extra Plan,25GB,45,104,205
+207,Unlimited Plus Plan,50GB,60,104,208
+208,Unlimited Extra Plan,60GB,65,105,207
+209,Family Plus Plan,100GB,80,105,210
+210,Family Extra Plan,150GB,85,101,209

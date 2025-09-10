@@ -1,0 +1,6 @@
+CustomerID,FirstName,LastName,LastPlanID,InactiveSince
+1001,john,DOE,101,15/03/2025
+1002,sArAh,smiTh,102,20/04/2025
+1003,,,103,10/03/2025
+1004,Ê alice,JOHNSON,104,05/05/2025
+1005,Charlie,Williams,105,15/06/2025
