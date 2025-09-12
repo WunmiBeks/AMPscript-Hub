@@ -1,0 +1,73 @@
+%%[
+
+SET @firstName = [First Name]
+SET @venueID = [VenueID]
+
+
+/* First name logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstnameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+
+ELSE 
+   SET @finalName = "there"
+
+ENDIF
+
+/* RETRIEVE FROM VENUE DE */
+SET @venueDERows = LookupRows("Venue", "VenueID", @venueID)
+SET @venueDE_row_count = rowcount(@venueDERows)
+
+/* CHECKS IF THERE IS A ROW THAT EXISTS IN THE VENUE DE */
+IF @venueDE_row_count > 0 THEN
+
+  SET @venueRow = row(@venueDERows,1)
+  SET @venueName = field(@venueRow, "VenueName")
+/* IF THE ROW DOES NOT EXIST */
+ELSE
+  
+  /* THIS FUNCTION WILL CANCEL THE EMAIL */
+  RaiseError("No row was found")  
+
+ENDIF
+
+/* RETRIEVE FROM VENUE_EVENT DE */
+SET @venueEventDERows = LookupRows("Venue_Events", "VenueID", @venueID)
+SET @venue_event_DE_count = rowcount(@venueEventDERows)
+
+/* CHECK IF VENUE NAME STARTS WITH "THE" AND SET SIGNATURE LINE LOGIC */
+IF IndexOf(@venueName, "The ") > 0 THEN
+  SET @signatureLine = CONCAT(@venueName, " Team")
+
+ELSE
+  SET @signatureLine = CONCAT("The ", @finalVenueName, " Team")
+
+ENDIF
+
+
+/* CHECKS IF THERE IS A ROW THAT EXISTS */
+IF @venue_event_DE_count > 0 THEN
+
+  SET @venueEventRow = row(@venueEventDERows,1)
+  SET @eventName = field(@venueEventRow, "EventName")
+  SET @eventDate = field(@venueEventRow, "EventDate")
+  SET @eventDescription = field(@venueEventRow, "EventDescription")
+  SET @eventURL = field(@venueEventRow, "EventURL")
+
+/* IF THE ROW DOES NOT EXIST */
+ELSE
+  
+  /* THIS FUNCTION WILL CANCEL THE EMAIL OR SMS SEND */
+  RaiseError("Row not found")  
+
+ENDIF
+
+/* Upcoming event days */
+SET @systemDate = Now(1)
+SET @localDate = SystemDateToLocalDate(@systemDate)
+SET @upcomingEventDays = DATEDIFF(@localDate, @EventDate, "D")
+
+/* Format event date */
+SET @eventDateFormatted = FormatDate(@eventDate, "MMM DD, YYYY")
+
+]%%

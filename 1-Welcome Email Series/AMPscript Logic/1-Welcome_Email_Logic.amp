@@ -1,0 +1,58 @@
+%%[
+
+SET @firstName = [First Name]
+SET @memberID = [MemberID]
+SET @venueID = [VenueID]
+
+/* RETRIEVE FROM VENUE DE */
+SET @venueDERows = LookupRows("Venue", "VenueID", @venueID)
+SET @venueDE_row_count = rowcount(@venueDERows)
+
+/* CHECKS IF THERE IS A ROW THAT EXISTS IN THE VENUE DE */
+IF @venueDE_row_count > 0 THEN
+
+  SET @venueRow = row(@venueDERows,1)
+  
+  SET @venueName = field(@venueRow, "VenueName")
+  SET @venueManager = field(@venueRow, "VenueManager")
+  SET @logoURL = field(@venueRow, "LogoURL")
+  SET @address = field(@venueRow, "Address")
+  SET @contactInfo = field(@venueRow, "ContactInfo")
+  SET @facebookLink = field(@venueRow, "FacebookLink")
+
+
+/* IF THE ROW DOES NOT EXIST */
+ELSE
+  
+  /* THIS FUNCTION WILL CANCEL THE EMAIL */
+  RaiseError("No row was found")  
+
+ENDIF
+
+/* CHECK IF VENUE NAME STARTS WITH "THE" AND SET SIGNATURE LINE LOGIC*/
+
+IF IndexOf(@venueName, "The ") > 0 THEN
+  SET @signatureLine = CONCAT("Venue Manager, at ", @venueName)
+
+ELSE
+  SET @finalVenueName= Replace(@venueName, "The ", "")
+  SET @signatureLine = CONCAT("Venue Manager, at the ", @finalVenueName)
+
+ENDIF
+
+/* First name and subject line logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstnameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+   SET @subjectLine = CONCAT("Welcome to ", @venueName, ", ", @finalName, "!")
+
+ELSE 
+   SET @finalName = "there"
+   SET @subjectLine = CONCAT("Welcome to ", @venueName, "!")
+
+ENDIF
+
+]%%
+
+
+

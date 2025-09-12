@@ -36,84 +36,84 @@ Call-to-action to visit the venue.
 
 ## CAMPAIGN EMAILS
 
-### Initial Welcome Email Template
+## Initial Welcome Email Template
 
 **Subject Line:** 
-Welcome to <VenueName>, <FirstName>!
+Welcome to `<VenueName>`, `<FirstName>`!
 
 **Email Body:** 
-Welcome to <VenueName>
+Welcome to `<VenueName>`
 
 *** Email Hero Image: ***
-<img src="venue logo image" alt="venue name">
+`<img src="venue logo image" alt="venue name">`
 
-Hello <FirstName>, welcome to <VenueName>!
+Hello `<FirstName>`, welcome to `<VenueName>`!
 
-We are thrilled to have you with us at <VenueName>. Our venue offers a unique atmosphere and a variety of events that cater to all tastes. Whether you're here to enjoy a quiet evening with friends, catch the latest sports game, or attend one of our themed nights, we have something for everyone.
+We are thrilled to have you with us at `<VenueName>`. Our venue offers a unique atmosphere and a variety of events that cater to all tastes. Whether you're here to enjoy a quiet evening with friends, catch the latest sports game, or attend one of our themed nights, we have something for everyone.
 
 Here's what you can expect:
 Exclusive access to our events and promotions.
 Personalized offers and updates.
 A vibrant community of fellow patrons.
 
-Address: <Address>
-Contact us at <Phone Number>
-Follow us on Facebook: <FB link>
+Address: `<Address>`
+Contact us at `<Phone Number>`
+Follow us on Facebook: `<FB link>`
 
 We look forward to seeing you soon!
 
 Best regards,
-<Venue Manager>
-Venue Manager, at the <Venue Name>
+`<Venue Manager>`
+Venue Manager, at the `<Venue Name>`
 
 
 
-### Educational Email Template
+## Educational Email Template
 
 **Subject Line:** 
-What's Happening at <VenueName>: Upcoming Events You Can't Miss!
+What's Happening at `<VenueName>`: Upcoming Events You Can't Miss!
 
 **Email Body:** 
 
-Upcoming Events at <VenueName>
+Upcoming Events at `<VenueName>`
 
-Hi <FirstName>!
+Hi `<FirstName>`!
 
-We hope you're enjoying your time with us at <VenueName>. To make sure you never miss out on the fun, here's a sneak peek at the upcoming event in the next <X> days:
+We hope you're enjoying your time with us at `<VenueName>`. To make sure you never miss out on the fun, here's a sneak peek at the upcoming event in the next `<X>` days:
 
-Event: <Event Name>
-Date: <Event Date>
-Description: <Event Description>
+Event: `<Event Name>`
+Date: `<Event Date>`
+Description: `<Event Description>`
 
 Mark your calendar and get ready for a fantastic time. Each event is designed to offer you a memorable experience filled with entertainment and camaraderie.
 
-Want to know more about these events or RSVP? <a href="#">Click here</a> for all the details.
+Want to know more about these events or RSVP? `<a href="#">Click here</a>` for all the details.
 
 We can't wait to see you there!
 
 Cheers,
-The <VenueName> Team
+The `<VenueName>` Team
 
 
 
-### Discount Offer Email
+## Discount Offer Email
 
 **Subject Line:** 
-Exclusive Offer for New Members: Enjoy 20% Off at <VenueName>!
+Exclusive Offer for New Members: Enjoy 20% Off at `<VenueName>`!
 
 **Email Body:**
-<FirstName>, we have an exclusive offer just for you!
+`<FirstName>`, we have an exclusive offer just for you!
 
-Hi <FirstName>!
+Hi `<FirstName>`!
 
-As a token of our appreciation for joining us, we're excited to offer you an exclusive discount on your next visit. Enjoy a special 20% off on your next meal or drink at <VenueName>.
+As a token of our appreciation for joining us, we're excited to offer you an exclusive discount on your next visit. Enjoy a special 20% off on your next meal or drink at `<VenueName>`.
 
-Simply show this email to your server with your unique redemption code <RedemptionCode> to redeem your discount.
+Simply show this email to your server with your unique redemption code `<RedemptionCode>` to redeem your discount.
 
-Thank you for choosing <VenueName>. We look forward to serving you soon!
+Thank you for choosing `<VenueName>`. We look forward to serving you soon!
 
 Cheers,
-The <VenueName> Team
+The `<VenueName>` Team
 
 
 

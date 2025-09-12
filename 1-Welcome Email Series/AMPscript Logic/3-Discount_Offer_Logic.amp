@@ -1,0 +1,49 @@
+%%[
+
+SET @firstName = [First Name]
+SET @venueID = [VenueID]
+SET @memberID = [MemberID]
+
+
+/* First name logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstnameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+   SET @openingLine = CONCAT(@finalName, ", ", "we have an exclusive offer just for you!")
+ELSE 
+   SET @finalName = "there"
+   SET @openingLine = "We have an exclusive offer just for you!"
+
+ENDIF
+
+/* RETRIEVE FROM VENUE DE */
+SET @venueDERows = LookupRows("Venue", "VenueID", @venueID)
+SET @venueDE_row_count = rowcount(@venueDERows)
+
+/* CHECKS IF THERE IS A ROW THAT EXISTS IN THE VENUE DE */
+IF @venueDE_row_count > 0 THEN
+  SET @venueRow = row(@venueDERows,1) 
+  SET @venueName = field(@venueRow, "VenueName")
+  SET @voucherPrefix = field(@venueRow, "VoucherPrefix")
+  
+ELSE
+  RaiseError("No row was found")  
+
+ENDIF
+
+/* CHECK IF VENUE NAME STARTS WITH "THE" AND SET SIGNATURE LINE LOGIC */
+IF IndexOf(@venueName, "The ") > 0 THEN
+  SET @signatureLine = CONCAT(@venueName, " Team")
+
+ELSE
+  SET @finalVenueName= Replace(@venueName, "The ", "")
+  SET @signatureLine = CONCAT("The ", @finalVenueName, " Team")
+
+ENDIF
+
+
+/* Discount Code */
+SET @discountCode = CONCAT(@voucherPrefix, "-", @memberID)
+
+]%%
+

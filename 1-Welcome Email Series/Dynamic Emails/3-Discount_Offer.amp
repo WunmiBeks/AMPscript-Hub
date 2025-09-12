@@ -1,0 +1,16 @@
+Subject Line: Exclusive Offer for New Members: Enjoy 20% Off at %%=v(@venueName)=%%!
+
+%%=v(@openingLine)=%%
+
+Hi %%=v(@finalName)=%%!
+
+As a token of our appreciation for joining us, we're excited to offer you an exclusive discount on your next visit. Enjoy a special 20% off on your next meal or drink at %%=v(@venueName)=%%.
+Simply show this email to your server with your unique redemption code %%=v(@discountCode)=%% to redeem your discount.
+
+Thank you for choosing %%=v(@venueName)=%%. We look forward to serving you soon!
+
+Cheers,
+%%=v(@signatureLine)=%% 
+
+
+

@@ -1,0 +1,25 @@
+Subject Line: %%=v(@subjectLine)=%%
+
+Welcome to %%=v(@venueName)=%%
+
+<img src="%%=v(@logoURL)=%%" alt="%%=v(@venueName)=%%">
+
+Hello %%=v(@finalName)=%%, welcome to %%=v(@venueName)=%%!
+
+We are thrilled to have you with us at %%=v(@venueName)=%%. Our venue offers a unique atmosphere and a variety of events that cater to all tastes. Whether you're here to enjoy a quiet evening with friends, catch the latest sports game, or attend one of our themed nights, we have something for everyone.
+
+Here's what you can expect:
+●	Exclusive access to our events and promotions.
+●	Personalized offers and updates.
+●	A vibrant community of fellow patrons.
+
+Address: %%=v(@address)=%%
+Contact us at %%=v(@contactInfo)=%%
+Follow us on Facebook: %%=v(@facebookLink)=%%
+
+We look forward to seeing you soon!
+Best regards,
+%%=v(@venueManager)=%%
+%%=v(@signatureLine)=%%
+
+

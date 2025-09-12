@@ -1,0 +1,21 @@
+Subject Line: What's Happening at %%=v(@venueName)=%%: Upcoming Events You Can't Miss!
+
+Upcoming Events at %%=v(@venueName)=%%
+
+Hi %%=v(@finalName)=%%!
+
+We hope you're enjoying your time with us at %%=v(@venueName)=%%. To make sure you never miss out on the fun, here's a sneak peek at the upcoming event in the next %%=v(@upcomingEventDays)=%% days:
+
+Event: %%=v(@eventName)=%%
+Date: %%=v(@eventDateFormatted)=%%
+Description: %%=v(@eventDescription)=%%. 
+
+Mark your calendar and get ready for a fantastic time. Each event is designed to offer you a memorable experience filled with entertainment and camaraderie.
+
+Want to know more about these events or RSVP? <a href="%%=RedirectTo(@eventURL)=%%">Click here</a> for all the details.   
+
+We can't wait to see you there!
+
+Cheers
+ %%=v(@signatureLine)=%% 
+
