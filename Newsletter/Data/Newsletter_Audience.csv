@@ -1,0 +1,6 @@
+CustomerID,FirstName,LastName,Email,PreferenceCategory
+1001,john,DOE,john@example.com,Home Loans
+1002,sArAh,smiTh,sarah@example.com,Credit Cards
+1003,,,mike@example.com,Long Term Investment
+1004,Ê emma,JOHNSON,emma@example.com,Short Term Investment
+1005,DAVID,Williams,david@example.com,Term Deposits
