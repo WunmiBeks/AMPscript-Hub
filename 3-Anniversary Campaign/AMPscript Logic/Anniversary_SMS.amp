@@ -1,0 +1,91 @@
+%%[
+
+/*Retrieve fields from Sending DE */
+SET @custID = [CustomerID]
+SET @firstName = [FirstName]
+
+
+/* First name and subject line logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstNameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+   SET @openingLine = CONCAT("Hi ", @finalName, ", Happy 1-Year Anniversary with FitGear!")
+ELSE  
+   SET @finalName = "there"
+   SET @openingLine = "Happy 1-Year Anniversary with FitGear!"
+ENDIF
+
+/* Look up rows */
+SET @rows = LookupRows("MarketingCustomerView", "CustomerID", @custID)
+SET @rowCount = rowcount(@rows)
+
+/* Check if there is a row that exists */
+IF @rowCount > 0 THEN
+
+  SET @row = row(@rows,1)  
+  SET @totalYearlySpend = field(@row, "TotalYearlySpend")
+  SET @avgBasketSize = field(@row, "AvgBasketSize")
+  
+  /* DISCOUNT LOGIC ON TOTAL YEARLY SPEND AND AVERAGE BASKET SIZE */
+  /* discount code for customers with <= 499 yearly spend */
+  IF @totalYearlySpend <= 499 THEN
+    IF @avgBasketSize <= 49 THEN 
+        SET @discount = "10"
+        SET @discountRef = "GTUI90"
+    ELSEIF @avgBasketSize > 49 AND  <= 99 THEN
+        SET @discount = "15"
+        SET @discountRef = "TGI782"       
+    ELSE
+        SET @discount = "20"
+        SET @discountRef = "THP892"       
+    ENDIF    
+        
+        
+   /* discount code for customers with <= 999 yearly spend */  
+  ELSEIF @totalYearlySpend <= 999 THEN
+     IF @avgBasketSize <= 49 THEN
+        SET @discount = "15" 
+        SET @discountRef = "POE231"   
+     ELSEIF @avgBasketSize >49 AND <=99 THEN 
+        SET @discount = "20"
+        SET @discountRef = "IIO908"       
+     ELSE 
+        SET @discount = "25"
+        SET @discountRef = "THN567"           
+     ENDIF
+        
+          
+  /* discount code for customers with >= 1000 yearly spend */        
+  ELSE
+     IF @avgBasketSize <= 49 THEN
+        SET @discount = "20"
+        SET @discountRef = "UIT897"        
+     ELSEIF @avgBasketSize >49 AND  <= 99 THEN
+        SET @discount = "25"
+        SET @discountRef = "WEX312"            
+     ELSE 
+        SET @discount = "30"
+        SET @discountRef = "TTN187"
+        
+    ENDIF      
+  ENDIF    
+  
+  /* Generate link */
+    SET @smsDiscountLink = CONCAT("fit.gear/", @discountRef)
+ELSE  
+  RaiseError("No row was found")  
+  
+ENDIF
+
+
+/* Dynamic Message */
+IF @avgBasketSize <= 49 THEN
+  SET @smsMessage = CONCAT("Thanks for your small but mighty purchases! Enjoy ", @discount, "% off your next purchase.")
+ELSEIF @avgBasketSize >49 AND <= 99 THEN
+  SET @smsMessage = CONCAT("We appreciate your consistent support! Enjoy ", @discount, "% off your next purchase.")
+ELSE
+  SET @smsMessage = CONCAT("You're one of our top spenders! Enjoy ",  @discount, "% off your next purchase.")
+ENDIF
+
+]%%
+

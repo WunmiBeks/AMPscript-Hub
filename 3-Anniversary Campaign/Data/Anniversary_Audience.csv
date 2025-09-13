@@ -1,0 +1,6 @@
+CustomerID,FirstName,LastName,Email,Mobile
+1001,john,DOE,john@example.com,61400000000
+1002,sArAh,smiTh,sarah@example.com,61400000001
+1003,,,mike@example.com,61400000002
+1004,Ê emma,JOHNSON,emma@example.com,61400000003
+1005,DAVID,Williams,david@example.com,61400000004

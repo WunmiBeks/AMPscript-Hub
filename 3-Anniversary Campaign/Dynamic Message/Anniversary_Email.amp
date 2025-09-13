@@ -1,0 +1,15 @@
+Subject Line: %%=v(@subjectLine)=%%
+
+Hi %%=v(@finalName)=%%,
+
+%%=v(@emailMessage)=%%
+
+Click `<a href="%%=RedirectTo(@discountLink)=%%">here</a>` to redeem your special offer.
+
+Thank you for being a valued member of the FitGear family. We look forward to serving you for many more years to come.
+
+Best regards,
+FitGear Team
+
+Click `<a href="%%=RedirectTo(@unsubscribeLink)=%%">unsubscribe</a>` to opt out of all marketing communications.
+
