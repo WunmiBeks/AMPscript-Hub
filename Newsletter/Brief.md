@@ -15,3 +15,33 @@ SecureBank wants to create a monthly dynamic email newsletter that displays vari
 | **Long Term Investment** | For those interested in Long Term Investments, we have gathered some expert advice and strategies<br>to help you plan your future with confidence. |
 | **Term Deposits**      | If you're considering Term Deposits, we have some valuable information and comparisons<br>to help you secure your financial future. |
 | **Short Term Investment** | Short Term Investments can be a great way to grow your wealth quickly.<br>Here are some quick strategies and comparisons to help you get started. |
+
+
+## Email Format
+
+Subject: `<FirstName>`, check out the latest news in the `<Current Month>` Monthly Newsletter!
+
+Hi `<FirstName>`,
+
+`<Message>`
+
+`<img src="<Article 1 ImageURL>" alt="<Article 1 Title>" style="width: 100%; height: auto;">`
+`<Article 1 Title>`
+`<Article 1 Description>`
+`<a href="<Article 1 Link>" style="color: blue;">Read more</a> </div>`
+
+`<img src="<Article 2 ImageURL>" alt="<Article 2 Title>" style="width: 100%; height: auto;">`
+`<Article 2 Title>`
+`<Article 2 Description>`
+`<a href="<Article 2 Link>" style="color: blue;">Read more</a> </div>`
+
+`<img src="<Article 3 ImageURL>" alt="<Article 3 Title>" style="width: 100%; height: auto;">`
+`<Article 3 Title>``
+`<Article 3 Description>`
+`<a href="<Article 3 Link>" style="color: blue;">Read more</a> </div>`
+
+For more information, contact us on 108091892 to speak to one of our product specialists. 
+
+Regards,
+The SecureBank Team
+
