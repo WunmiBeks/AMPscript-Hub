@@ -1,0 +1,64 @@
+%%[
+
+SET @preferenceCategory = [PreferenceCategory]
+SET @rows = LookupRows("Newsletter_Content_Data", "Category", @preferenceCategory)
+
+SET @rowCount = rowcount(@rows)
+
+/* CHECKS IF THERE IS A ROW THAT EXISTS */
+IF @rowCount > 0 THEN
+
+  SET @row = row(@rows,1)
+ 
+  /* Retrieve fields from Sending DE */
+  SET @article1Title = field(@row, "Article1Title")
+  SET @article1Description = field(@row, "Article1Description")
+  SET @article1Link = field(@row, "Article1Link")
+  SET @article1ImageURL = field(@row, "Article1ImageURL")
+  SET @article2Title = field(@row, "Article2Title")
+  SET @article2Description = field(@row, "Article2Description")
+  SET @article2Link = field(@row, "Article2Link")
+  SET @article2ImageURL = field(@row, "Article2ImageURL")
+  SET @article3Title = field(@row, "Article3Title")
+  SET @article3Description = field(@row, "Article3Description")
+  SET @article3Link = field(@row, "Article3Link")
+  SET @article3ImageURL = field(@row, "Article3ImageURL")
+  SET @category = field(@row, "Category")
+ELSE
+  RaiseError("No row was found")  
+
+ENDIF
+
+/* Set logic for current month */
+SET @currentDate = Now(1)
+SET @currentMonth = FormatDate(@currentDate, "MMMM")
+
+
+/* Retrieve fields from Sending DE */
+SET @firstName = [FirstName]
+
+/* First name and subject line logic */
+IF NOT EMPTY(@firstName) THEN 
+   SET @firstNameTrim = Trim(@firstName)
+   SET @finalName = ProperCase(@firstNameTrim)
+   SET @subjectLine = CONCAT(@finalName, ", check out the latest news in the ", @currentMonth, " Monthly Newsletter!")
+ELSE  
+   SET @finalName = "there"
+   SET @subjectLine =  CONCAT("Check out the latest news in the ", @currentMonth, " Monthly Newsletter!")
+ENDIF
+
+
+/* Set emailMessage */
+IF @category == "Home Loans" THEN
+   SET @message = "As someone interested in Home Loans, we've curated some articles just for you. Check out our latest insights and tips to help you make the best decisions for your home financing needs."
+ELSEIF @category == "Credit Cards" THEN 
+   SET @message = "We've noticed your interest in Credit Cards. Here are the latest updates and tips on how to maximize your credit card benefits and manage your finances effectively."
+ELSEIF @category == "Long Term Investment" THEN
+   SET @message = "For those interested in Long Term Investments, we have gathered some expert advice and strategies to help you plan your future with confidence."
+ELSEIF @category == "Term Deposits" THEN 
+   SET @message = "If you're considering Term Deposits, we have some valuable information and comparisons to help you secure your financial future."
+ELSE
+   SET @message = "Short Term Investments can be a great way to grow your wealth quickly. Here are some quick strategies and comparisons to help you get started."  
+ENDIF
+]%%
+

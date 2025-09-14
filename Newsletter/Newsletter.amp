@@ -1,0 +1,25 @@
+Subject Line: %%=v(subjectLine)=%%
+
+Hi %%=v(@finalName)=%%,
+
+%%=v(@message)=%%
+
+<img src="%%=v(@article1ImageURL)=%%" alt="%%=v(@article1Title)=%%" style="width: 100%; height: auto;">
+%%=v(@article1Title)=%%
+%%=v(@article1Description)=%%
+<a href="%%=RedirectTo(@article1Link)=%%" style="color: blue;">Read more</a> </div>
+
+<img src="%%=v(@article2ImageURL)=%%" alt="%%=v(@article2Title)=%%" style="width: 100%; height: auto;">
+%%=v(@article2Title)=%%
+%%=v(@article2Description)=%%
+<a href="%%=RedirectTo(@article2Link)=%%" style="color: blue;">Read more</a> </div>
+
+<img src="%%=v(@article3ImageURL)=%%" alt="%%=v(@article3Title)=%%" style="width: 100%; height: auto;">
+%%=v(@article3Title)=%%
+%%=v(@article2Description)=%%
+<a href="%%=RedirectTo(@article2Link)=%%" style="color: blue;">Read more</a> </div>
+
+For more information, contact us on 108091892 to speak to one of our product specialists. 
+
+Regards,
+The SecureBank Team
