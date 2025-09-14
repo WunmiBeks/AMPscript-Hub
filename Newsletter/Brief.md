@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-SecureBank is a leading financial institution offering a wide range of banking products and services, including home loans, investment accounts, credit cards, term deposits, and more. SecureBank aims to engage its customers with personalized content to enhance their banking experience and drive online sales consultations.
+Bright Bank is a leading financial institution offering a wide range of banking products and services, including home loans, investment accounts, credit cards, term deposits, and more. Bright Bank aims to engage its customers with personalized content to enhance their banking experience and drive online sales consultations.
 
-SecureBank wants to create a monthly dynamic email newsletter that displays various articles, blog posts, products, and offers based on customers' interests and browsing behavior. The goal is to automate the newsletter content to reduce manual updates by marketers and to drive customers to the website to book consultations with the sales team.
+Bright Bank wants to create a monthly dynamic email newsletter that displays various articles, blog posts, products, and offers based on customers' interests and browsing behavior. The goal is to automate the newsletter content to reduce manual updates by marketers and to drive customers to the website to book consultations with the sales team.
 
 ## Requirements
 
@@ -25,32 +25,25 @@ Hi `<FirstName>`, <br>
 
 `<Message>`
 
-`<img src="<Article 1 ImageURL>" alt="<Article 1 Title>" style="width: 100%; height: auto;">`
-
-`<Article 1 Title>`
-
-`<Article 1 Description>`
-
+`<img src="<Article 1 ImageURL>" alt="<Article 1 Title>" style="width: 100%; height: auto;">` <br>
+`<Article 1 Title>` <br>
+`<Article 1 Description>` <br>
 `<a href="<Article 1 Link>" style="color: blue;">Read more</a> </div>`
 
-`<img src="<Article 2 ImageURL>" alt="<Article 2 Title>" style="width: 100%; height: auto;">`
 
-`<Article 2 Title>`
-
-`<Article 2 Description>`
-
+`<img src="<Article 2 ImageURL>" alt="<Article 2 Title>" style="width: 100%; height: auto;">` <br>
+`<Article 2 Title>` <br>
+`<Article 2 Description>` <br>
 `<a href="<Article 2 Link>" style="color: blue;">Read more</a> </div>`
 
-`<img src="<Article 3 ImageURL>" alt="<Article 3 Title>" style="width: 100%; height: auto;">`
 
-`<Article 3 Title>`
-
-`<Article 3 Description>`
-
+`<img src="<Article 3 ImageURL>" alt="<Article 3 Title>" style="width: 100%; height: auto;">` <br>
+`<Article 3 Title>` <br>
+`<Article 3 Description>` <br>
 `<a href="<Article 3 Link>" style="color: blue;">Read more</a> </div>`
 
 For more information, contact us on 108091892 to speak to one of our product specialists. 
 
 Regards,
-The SecureBank Team
+The Bright Bank Team
 
